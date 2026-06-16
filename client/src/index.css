@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-sec-dark: #030712;
+  --color-sec-darker: #02040a;
+  --color-sec-cyan: #06b6d4;
+  --color-sec-teal: #14b8a6;
+  --color-sec-emerald: #10b981;
+  --color-sec-accent: #0ea5e9;
+  
+  --font-sans: 'Outfit', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-sec-dark text-white antialiased selection:bg-sec-cyan selection:text-sec-darker font-sans;
+    background-color: #030712;
+  }
+}
+
+/* Custom Animation Keyframes for Orbs */
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  33% { transform: translateY(-30px) translateX(20px) scale(1.05); }
+  66% { transform: translateY(20px) translateX(-20px) scale(0.95); }
+  100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+
+@keyframes float-delayed {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  33% { transform: translateY(30px) translateX(-20px) scale(0.95); }
+  66% { transform: translateY(-20px) translateX(20px) scale(1.05); }
+  100% { transform: translateY(0px) translateX(0px) scale(1); }
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.15; }
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 18s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+.glass-panel {
+  @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
