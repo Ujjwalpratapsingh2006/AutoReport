@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Dashboard from './pages/Dashboard';
+import ResearchPage from './pages/ResearchPage';
 import Layout from './components/Layout';
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           
           <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="research/:sessionId" element={<ResearchPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
