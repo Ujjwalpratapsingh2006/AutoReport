@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import authRouter from "./routes/auth.routers.js";
+import researchRouter from "./routes/research.routers.js";
 const app=express();
 
 app.use(cors({
@@ -15,4 +16,5 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/auth", authRouter);
+app.use("/api/research", researchRouter);
 export default app;
