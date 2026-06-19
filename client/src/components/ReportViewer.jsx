@@ -51,7 +51,7 @@ export default function ReportViewer({ report, sources, topic, criticScore, revi
             {/* Document Container */}
             <div className="flex-1 bg-slate-100 print:bg-white overflow-y-auto">
                 <div className="max-w-4xl mx-auto my-8 bg-white shadow-xl ring-1 ring-slate-200 print:shadow-none print:ring-0 print:my-0">
-                    <div ref={documentRef} className="p-12 print:p-0">
+                    <div ref={documentRef} className="p-12 print:p-12">
                         <ReportDocument 
                             report={report} 
                             sources={sources} 
